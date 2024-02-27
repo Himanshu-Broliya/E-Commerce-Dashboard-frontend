@@ -1,0 +1,1 @@
+export const baseUrl = `https://e-commerce-dashboard-no5d.onrender.com`
