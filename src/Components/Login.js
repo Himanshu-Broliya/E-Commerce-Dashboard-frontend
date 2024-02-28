@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { baseUrl } from './Constants/constant';
+import Swal from 'sweetalert2';
 
 export default function Login() {
 
@@ -22,7 +23,7 @@ export default function Login() {
         } else {
             // console.log(baseUrl)
             let result = await fetch(`${baseUrl}/login`, {
-                method: 'post',
+                method: 'POST',
                 body: JSON.stringify({ email, password }),
                 headers: {
                     'Content-Type': 'application/json'
@@ -34,10 +35,13 @@ export default function Login() {
             if(result.auth){
                 localStorage.setItem("users", JSON.stringify(result.user));
                 localStorage.setItem("token", JSON.stringify(result.auth));
-
                 navigate('/');
             }else{
-                alert('Please Enter correct details')
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Email or Password is wrong!",
+                  });
             }
             
             // console.log(result);

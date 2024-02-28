@@ -119,7 +119,7 @@ export default function Profile() {
     formData.append("userid",userid);
 
 
-    if( fname === "" || mobile==="" || address==="" || hobby==="" ){
+    if(image === "" || fname === "" || mobile==="" || address==="" || hobby==="" ){
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -154,7 +154,7 @@ export default function Profile() {
         {
           newImage
            ? 
-           <img src={`http://localhost:5000/${newImage}`} alt='Upload Image' className='rounded-full h-[9rem] w-[9rem] object-cover cursor-pointer'/>
+           <img src={`${baseUrl}/${newImage}`} alt='Upload Image' className='rounded-full h-[9rem] w-[9rem] object-cover cursor-pointer'/>
            :
           <div>
           {
@@ -179,17 +179,17 @@ export default function Profile() {
            </div>
         : 
         <div className='flex flex-col'>
-          <input type='text' placeholder='First Name' value={fname} onChange={(e) => setFname(e.target.value)} className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[400px]' />
-          <input type='text' placeholder='Last Name' value={lname} onChange={(e) => setLname(e.target.value)} className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[400px]' />
-          <input type='email' placeholder='Email' value={email} readOnly className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[400px]' />
-          <input type='number' placeholder='mobile' value={mobile} onChange={(e) => setmobile(e.target.value)} className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[400px]' />
-          <input type='text' placeholder='Address' value={address} onChange={(e) => setAddress(e.target.value)} className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[400px]' />
-          <input type='text' placeholder='Hobby' value={hobby} onChange={(e) => setHobby(e.target.value)} className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[400px]' />
+          <input type='text' placeholder='First Name' value={fname} onChange={(e) => setFname(e.target.value)} className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[300px] md:w-[400px]' />
+          <input type='text' placeholder='Last Name' value={lname} onChange={(e) => setLname(e.target.value)} className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[300px] md:w-[400px]' />
+          <input type='email' placeholder='Email' value={email} readOnly className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[300px] md:w-[400px]' />
+          <input type='number' placeholder='mobile' value={mobile} onChange={(e) => setmobile(e.target.value)} className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[300px] md:w-[400px]' />
+          <input type='text' placeholder='Address' value={address} onChange={(e) => setAddress(e.target.value)} className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[300px] md:w-[400px]' />
+          <input type='text' placeholder='Hobby' value={hobby} onChange={(e) => setHobby(e.target.value)} className='border-2 border-blue-500 focus:border-blue-500 focus:outline-blue-500 px-3 py-2 rounded-md mb-4 text-blue-800 text-[17px] w-[300px] md:w-[400px]' />
           {
             edit 
               ? <button className='bg-blue-300 rounded-md py-2 text-blue-900 text-[17px] font-bold mb-10' onClick={updateProfile}>Update Profile</button>
              :
-             <button className='bg-blue-300 rounded-md py-2 text-blue-900 text-[17px] font-bold mb-10' onClick={uploadImage}>Update f Profile</button>
+             <button className='bg-blue-300 rounded-md py-2 text-blue-900 text-[17px] font-bold mb-10' onClick={uploadImage}>Update Profile</button>
 
           }
         </div>

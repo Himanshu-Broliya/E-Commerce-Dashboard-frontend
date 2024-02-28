@@ -31,7 +31,7 @@ export default function Products() {
     if (result.expire === "Token Expired") {
       Swal.fire({
         title: "Oops...",
-        text: "Token is expired. Please login again!",
+        text: "Session is expired. Please login again!",
         icon: "error",
         confirmButtonColor: "#3085d6",
         confirmButtonText: "Ok"
