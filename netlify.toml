@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/*"
+to = "Login.js"
+status = 200
